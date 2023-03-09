@@ -81,9 +81,15 @@ slideDescription.append(slideText);
 // immagine a conteggio 0
 showImage(counter);
 
+// riporto funzione al click giù
+afterButton.addEventListener("click", afterButtonClick);
 
 
+// riporto funzione al click su
+beforeButton.addEventListener("click", beforeButtonClick);
 
+
+// bonus 1 e 2
 
 
 
@@ -112,4 +118,37 @@ function showImage(i){
     
     imageSlide.src = images[i].image;
 
+}
+
+// funzione per il bottone giù
+function afterButtonClick(){
+
+    if(counter == images.length - 1){
+
+        counter = 0;
+
+    } else {
+       
+        counter++;
+
+    }
+
+    showImage(counter);
+}
+
+// funzione per il bottone su
+function beforeButtonClick(){
+   
+    if (counter == 0){
+
+        counter = images.length - 1;
+
+    } else {
+
+
+        counter--;
+
+    }
+
+    showImage(counter);
 }
