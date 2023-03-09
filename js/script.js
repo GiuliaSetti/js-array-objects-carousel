@@ -64,3 +64,35 @@ const afterButton = document.getElementById("after");
 
 // inserisco un contatore per gli index delle immagini
 let counter = 0;
+
+showImage(counter);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// FUNCTIONS____________________________
+
+function showImage(i){
+   
+    
+    imageSlide.src = images[i].image;
+
+}
