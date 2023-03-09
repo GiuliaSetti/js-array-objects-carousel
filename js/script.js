@@ -65,8 +65,21 @@ const afterButton = document.getElementById("after");
 // inserisco un contatore per gli index delle immagini
 let counter = 0;
 
-showImage(counter);
+// creo un elemento che contenga titolo e testo
+const slideDescription = document.createElement("div");
+slideContainerEl.append(slideDescription);
+slideDescription.classList.add("info_container");
 
+// creo due elementi che contengano titolo e descrizione dell'immagine
+const slideTitle = document.createElement("h3");
+slideDescription.append(slideTitle);
+
+
+const slideText = document.createElement("p");
+slideDescription.append(slideText);
+
+// immagine a conteggio 0
+showImage(counter);
 
 
 
@@ -92,6 +105,10 @@ showImage(counter);
 
 function showImage(i){
    
+       
+    slideTitle.innerHTML = `${images[counter].title}`;
+    
+    slideText.innerHTML = `${images[counter].text}`;
     
     imageSlide.src = images[i].image;
 

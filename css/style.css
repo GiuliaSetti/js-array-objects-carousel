@@ -65,3 +65,21 @@ h1{
     bottom: 10px;
     right: 50%;
 }
+
+/* descrizione immagine */
+.info_container{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: white;
+    padding: 5px;
+    background-color: rgba(1, 1, 1, 0.3);
+
+    border-radius: 0px 20px 0px 0px;
+
+}
+
+
