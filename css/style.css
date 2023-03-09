@@ -8,3 +8,60 @@
 
     font-family: 'Montserrat', sans-serif;
 }
+
+/* title */
+
+h1{
+    padding: 2rem;
+    text-align: center;
+}
+
+/* main container */
+
+.main_container{
+    max-width: 1000px;
+    margin: 2rem auto;
+    position: relative;
+}
+
+/* slide container */
+
+#slides_container{
+    max-width: 1000px;
+    height: 500px;
+    background-color: black;
+}
+
+#slides_container img{
+    width: 100%;
+    aspect-ratio: 18/9;
+
+    object-fit: cover;
+    display: block;
+}
+
+
+/* buttons */
+#before,
+#after{
+    position: absolute;
+
+    padding: 10px 13px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+
+    color: white;
+}
+
+#before{
+
+    top: 10px;
+    right: 50%;
+
+}
+
+#after{
+    bottom: 10px;
+    right: 50%;
+}
