@@ -85,15 +85,15 @@ afterButton.addEventListener("click", afterButtonClick);
 // riporto funzione al click su
 beforeButton.addEventListener("click", beforeButtonClick);
 
+// immagine a conteggio 0
+showImage(counter);
+
 
 // bonus 1 e 2
 
 // memorizzo l'elemento HTML che indica le miniature
 const thumbnailsEl = document.getElementById("thumbnails");
 
-
-// immagine a conteggio 0
-showImage(counter);
 
 // mostro le thumbnails
 showThumb(images);
@@ -119,6 +119,17 @@ function showThumb(array){
         thumbImage.classList.add("thumbnail");
     
         thumbnailsEl.append(thumbImage);
+
+        // aggiungo la classe active al click dell'immagine
+        
+        thumbImage.addEventListener('click', function() {
+            thumbnailArray[counter].classList.remove("active");
+
+            counter = i;
+            showImage(counter);
+
+            thumbnailArray[i].classList.add("active");
+        });
     
     }
 
