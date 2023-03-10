@@ -44,7 +44,7 @@ main{
 /* slide container */
 
 #slides_container{
-    max-width: 1000px;
+    width: 1000px;
     height: 500px;
     background-color: gray;
     position: relative;
@@ -53,7 +53,7 @@ main{
 
 #slides_container img{
     width: 100%;
-    aspect-ratio: 18/9;
+    height: 100%;
 
     object-fit: cover;
     display: block;

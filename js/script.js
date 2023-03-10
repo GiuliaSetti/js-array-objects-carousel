@@ -78,6 +78,19 @@ slideDescription.append(slideTitle);
 const slideText = document.createElement("p");
 slideDescription.append(slideText);
 
+// memorizzo l'elemento HTML che indica le miniature
+const thumbnailsEl = document.getElementById("thumbnails");
+
+
+
+// memorizzo i bottoni 
+const startButton = document.getElementById("start");
+
+const reverseButton = document.getElementById("reverse");
+
+const stopButton = document.getElementById("stop");
+
+
 // riporto funzione al click giù
 afterButton.addEventListener("click", afterButtonClick);
 
@@ -91,10 +104,6 @@ showImage(counter);
 
 // bonus 1 e 2
 
-// memorizzo l'elemento HTML che indica le miniature
-const thumbnailsEl = document.getElementById("thumbnails");
-
-
 // mostro le thumbnails
 showThumb(images);
 
@@ -102,19 +111,23 @@ const thumbnailArray = document.querySelectorAll('.thumbnail');
 
 thumbnailArray[counter].classList.add("active");
 
-// memorizzo un timer
-setInterval(autoPlay, 3000);
-
-function autoPlay(){
-    showImage(counter);
-    afterButtonClick()
-}
+// cancello il timer e lo metto in una funzione per attivarl al click
+startButton.addEventListener("click", startAutoPlay)
 
 
 
 
 
 // FUNCTIONS____________________________
+
+// funzione per lo scorrimetno delle foto automatico
+function startAutoPlay() {
+    showImage(counter);
+    setInterval(afterButtonClick,3000);
+}
+  
+
+
 
 // funzione per le thumbnails
 function showThumb(array){
