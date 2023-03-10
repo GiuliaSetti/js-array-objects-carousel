@@ -111,21 +111,39 @@ const thumbnailArray = document.querySelectorAll('.thumbnail');
 
 thumbnailArray[counter].classList.add("active");
 
-// cancello il timer e lo metto in una funzione per attivarl al click
+// cancello il timer e lo metto in una funzione per attivarlo al click
 startButton.addEventListener("click", startAutoPlay)
 
+reverseButton.addEventListener("click", reverseAutoPlay);
 
+stopButton.addEventListener("click", stopAutoPlay);
+
+// memorizzo una variabile per il timer
+
+let autoPlayInterval;
 
 
 
 // FUNCTIONS____________________________
 
+
+
 // funzione per lo scorrimetno delle foto automatico
 function startAutoPlay() {
     showImage(counter);
-    setInterval(afterButtonClick,3000);
+    autoPlayInterval = setInterval(afterButtonClick,3000);
 }
-  
+
+// funzione per lo scorrimetno delle foto automatico - contrario
+function reverseAutoPlay() {
+    showImage(counter);
+    autoPlayInterval = setInterval(beforeButtonClick,3000);
+}
+
+// funzione per lo scorrimetno delle foto automatico - disattivato
+function stopAutoPlay() {
+    clearInterval(autoPlayInterval);
+}
 
 
 
