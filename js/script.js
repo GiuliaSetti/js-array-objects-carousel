@@ -26,7 +26,7 @@
 const images = [
     {
         image: 'img/01.webp',
-        title: 'Marvel\'s Spiderman Miles Morale',
+        title: 'Marvel\'s Spiderman Miles Morales',
         text: 'Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.',
     }, {
         image: 'img/02.webp',
@@ -78,9 +78,6 @@ slideDescription.append(slideTitle);
 const slideText = document.createElement("p");
 slideDescription.append(slideText);
 
-// immagine a conteggio 0
-showImage(counter);
-
 // riporto funzione al click giù
 afterButton.addEventListener("click", afterButtonClick);
 
@@ -91,29 +88,48 @@ beforeButton.addEventListener("click", beforeButtonClick);
 
 // bonus 1 e 2
 
+// memorizzo l'elemento HTML che indica le miniature
+const thumbnailsEl = document.getElementById("thumbnails");
 
 
+// immagine a conteggio 0
+showImage(counter);
 
+// mostro le thumbnails
+showThumb(images);
 
+const thumbnailArray = document.querySelectorAll('.thumbnail');
 
-
-
-
-
-
-
-
+thumbnailArray[counter].classList.add("active");
 
 
 
 
 // FUNCTIONS____________________________
 
+// funzione per le thumbnails
+function showThumb(array){
+    for (let i = 0; i < array.length; i++) {
+    
+        let thumbImage = document.createElement('img');
+    
+        thumbImage.src = images[i].image;
+        thumbImage.style.height = "calc(100% / " + images.length + ")";
+    
+        thumbImage.classList.add("thumbnail");
+    
+        thumbnailsEl.append(thumbImage);
+    
+    }
+
+}
+
+// funzione che mostra l'immagine
 function showImage(i){
        
-    slideTitle.innerHTML = `${images[counter].title}`;
+    slideTitle.innerHTML = `${images[i].title}`;
     
-    slideText.innerHTML = `${images[counter].text}`;
+    slideText.innerHTML = `${images[i].text}`;
     
     imageSlide.src = images[i].image;
 
@@ -121,6 +137,8 @@ function showImage(i){
 
 // funzione per il bottone giù
 function afterButtonClick(){
+
+    thumbnailArray[counter].classList.remove("active");
 
     if(counter == images.length - 1){
 
@@ -130,13 +148,18 @@ function afterButtonClick(){
        
         counter++;
 
+
     }
 
     showImage(counter);
+
+    thumbnailArray[counter].classList.add("active");
 }
 
 // funzione per il bottone su
 function beforeButtonClick(){
+
+    thumbnailArray[counter].classList.remove("active");
    
     if (counter == 0){
 
@@ -146,8 +169,11 @@ function beforeButtonClick(){
 
 
         counter--;
+        
 
     }
 
     showImage(counter);
+
+    thumbnailArray[counter].classList.add("active");
 }
