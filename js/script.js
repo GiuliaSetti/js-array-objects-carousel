@@ -102,8 +102,7 @@ const thumbnailArray = document.querySelectorAll('.thumbnail');
 
 thumbnailArray[counter].classList.add("active");
 
-
-// memorizzo la timing function in una variabile così la posso manipolare successivamente
+// memorizzo un timer
 setInterval(autoPlay, 3000);
 
 function autoPlay(){

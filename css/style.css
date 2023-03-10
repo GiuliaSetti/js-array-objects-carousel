@@ -14,14 +14,31 @@
 h1{
     padding: 2rem;
     text-align: center;
+    font-size: 40px;
+}
+
+
+/* main */
+
+main{
+    background-color: rgb(209, 209, 209);
+    height: 100vh;
 }
 
 /* main container */
 
 .main_container{
     max-width: 1400px;
-    margin: 2rem auto;
+    margin: 1rem auto;
     display: flex;
+    justify-content: center;
+
+    border-radius: 20px;
+
+    background-color: black;
+    box-shadow: 10px 10px 9px gray;
+
+    padding: 2rem;
 }
 
 /* slide container */
@@ -66,13 +83,9 @@ h1{
     opacity: 0.4;
 }
 
-
-
 .active{
     opacity: 1;
 }
-
-
 
 
 /* buttons */
@@ -87,6 +100,8 @@ h1{
 
     color: white;
     z-index: 1;
+
+    cursor: pointer;
 }
 
 #before{
@@ -100,6 +115,38 @@ h1{
     bottom: 10px;
     right:40%;
 }
+
+
+.autoplay_buttons{
+    display: flex;
+    justify-content: center;
+    gap: 6rem;
+    padding: 1rem;
+}
+
+.autoplay_buttons button{
+    padding: 15px 20px;
+
+    border: none;
+    border-radius: 30px;
+
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    box-shadow: 5px 5px 9px gray;
+
+    cursor: pointer;
+}
+
+
+.autoplay_buttons button:hover{
+    background-color: white;
+    color: black;
+  
+}
+
+
+
 
 /* descrizione immagine */
 .info_container{
@@ -117,4 +164,9 @@ h1{
 
 }
 
+.info_container:hover{
+    background-color: rgba(255, 255, 255, 0.703);
+    color: black;
+  
+}
 
