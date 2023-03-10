@@ -110,7 +110,6 @@ beforeButton.addEventListener("click", beforeButtonClick);
 // FUNCTIONS____________________________
 
 function showImage(i){
-   
        
     slideTitle.innerHTML = `${images[counter].title}`;
     
