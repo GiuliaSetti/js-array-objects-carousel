@@ -118,8 +118,10 @@ reverseButton.addEventListener("click", reverseAutoPlay);
 
 stopButton.addEventListener("click", stopAutoPlay);
 
-// memorizzo una variabile per il timer
+// memorizzo un timer che attivi l'autoplay dopo 5 sec che si è nella pagina
+setTimeout(autoPlay, 10000);
 
+// memorizzo una variabile per il timer
 let autoPlayInterval;
 
 
@@ -128,16 +130,22 @@ let autoPlayInterval;
 
 
 
+// autoplay: a prescindere.
+function autoPlay(){
+    
+    autoPlayInterval = setInterval(afterButtonClick, 2000);
+}
+
 // funzione per lo scorrimetno delle foto automatico
 function startAutoPlay() {
     showImage(counter);
-    autoPlayInterval = setInterval(afterButtonClick,3000);
+    autoPlayInterval = setInterval(afterButtonClick,2000);
 }
 
 // funzione per lo scorrimetno delle foto automatico - contrario
 function reverseAutoPlay() {
     showImage(counter);
-    autoPlayInterval = setInterval(beforeButtonClick,3000);
+    autoPlayInterval = setInterval(beforeButtonClick,2000);
 }
 
 // funzione per lo scorrimetno delle foto automatico - disattivato
